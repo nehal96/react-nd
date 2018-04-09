@@ -7,6 +7,7 @@ class App extends Component {
     contacts: []
   }
 
+  // AJAX call to get contact data from back-end server.
   componentDidMount() {
     ContactsAPI.getAll()
       .then((contacts) => {
@@ -17,11 +18,16 @@ class App extends Component {
   }
 
   removeContact = (contact) => {
+    // Filter contacts based on contact ID (only show every contact other than
+    // the one passed in).
     this.setState((currentState) => ({
       contacts: currentState.contacts.filter((c) => {
         return c.id !== contact.id
       })
     }))
+
+    // Also remove contact from back-end server
+    ContactsAPI.remove(contact)
   }
 
   render() {
