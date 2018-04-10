@@ -7,7 +7,6 @@ import { Route } from 'react-router-dom'
 class App extends Component {
   state = {
     contacts: [],
-    screen: 'list'
   }
 
   // AJAX call to get contact data from back-end server.
@@ -33,6 +32,15 @@ class App extends Component {
     ContactsAPI.remove(contact)
   }
 
+  createContact = (contact) => {
+    ContactsAPI.create(contact)
+      .then((contact) => {
+        this.setState((currentState) => ({
+          contacts: currentState.contacts.concat([contact])
+        }))
+      })
+  }
+
   render() {
     return (
       <div>
@@ -42,7 +50,13 @@ class App extends Component {
             onDeleteContact = {this.removeContact}
           />
         )} />
-        <Route path='/create' component={CreateContact} />
+      <Route path='/create' render={({history}) => (
+          <CreateContact
+            onCreateContact={(contact) => {
+              this.createContact(contact)
+              history.push('/')
+            }} />
+        )} />
       </div>
     )
   }
