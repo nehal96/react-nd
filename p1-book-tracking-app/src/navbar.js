@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   render() {
@@ -6,7 +7,9 @@ class Navbar extends Component {
       <nav className='navbar'>
         <div className='navbar-spacer'></div>
         <div className='navbar-heading'>
-          <h4>Listopia</h4>
+          <Link to='/'>
+            <h4>Listopia</h4>
+          </Link>
         </div>
         <div className='navbar-search-bar'>
           <input className='search-bar' type='text' placeholder='Search' />

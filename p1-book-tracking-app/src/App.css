@@ -17,6 +17,11 @@
   justify-content: center;
 }
 
+.navbar-heading a {
+  color: black;
+  text-decoration: none;
+}
+
 .navbar-heading h4 {
   margin: .5rem 0rem;
 }
