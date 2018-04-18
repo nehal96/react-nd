@@ -75,6 +75,20 @@
   border-bottom: 1px solid #ccc;
 }
 
+.booklist {
+
+}
+
+.book-card {
+  font-size: 1.2rem;
+}
+
+.book-title {
+
+}
+
+.
+
 @media only screen and (max-width: 700px) {
   .navbar {
     flex-wrap: wrap;
