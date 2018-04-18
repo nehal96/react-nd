@@ -10,14 +10,27 @@ class ListBooks extends Component {
   render() {
     const { books } = this.props
 
+    books.forEach(function(book) {
+      console.log(book.authors)
+    })
+
     return (
-      <ul className='booklist'>
-        {books.map((book) => (
-          <li key={book.id} className='book-card'>
-            <p className='book-title'>{ book.title }</p>
-          </li>
-        ))}
-      </ul>
+      <div className='card-deck-container'>
+        <div className='card-deck'>
+          {books.map((book) => (
+            <div key={book.id} className='card book-card'>
+              <img className='card-img img-fluid' src={ book.imageLinks.thumbnail } alt={ book.title }></img>
+              <h6 className='book-title'>{ book.title }</h6>
+              <p className='book-subtitle'>{
+                    book.authors.length > 1 ?
+                    book.authors.map((author) => (author + ', ')) :
+                    book.authors[0]
+                }
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     )
   }
 }
