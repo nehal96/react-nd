@@ -10,7 +10,7 @@ class BookShelf extends Component {
 
   render() {
     const { books } = this.props
-    
+
     return (
       <section className='bookshelf-container'>
         <div className='bookshelf'>
