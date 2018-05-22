@@ -85,13 +85,19 @@
   margin: auto;
 }*/
 
+
 .card-deck {
   display: flex;
   flex-flow: row wrap;
-  margin: 0rem -1rem;
+  /*margin: 0rem 0rem;*/
   justify-content: flex-start;
 }
 
+.card {
+  margin: 1rem 2rem 1rem 0rem;
+  max-width: 10.5rem;
+}
+/*
 .card {
   position: relative;
   display: flex;
@@ -122,6 +128,7 @@
   width: 100%;
   border-radius: calc(.25rem - 1px);
 }
+*/
 
 .img-fluid {
   max-width: 100%;
@@ -129,14 +136,15 @@
 }
 
 .book-title {
-  padding: 1rem;
+  /*padding: 1rem;*/
   margin: 0;
   font-weight: 500;
   font-size: 1rem;
 }
 
 .book-subtitle {
-  padding: 0 1rem 1rem 1rem;
+  /*padding: 0 1rem 1rem 1rem;*/
+  padding: 0;
   margin: 0;
   font-size: .9rem;
   color: #999;
