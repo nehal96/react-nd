@@ -27,6 +27,41 @@
   margin: .5rem 0rem;
 }
 
+.navbar-button {
+  width: 25%;
+  margin: .5rem;
+  display: flex;
+  padding-right: 2rem;
+  vertical-align: middle;
+}
+
+/* Bootstrap button */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  /*transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;*/
+}
+
+.search-button {
+  color: black;
+  border: 1.5px solid #666;
+  background-color: #eee;
+  transition: background-color .25s ease;
+}
+
+.btn:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
 .navbar-search-bar {
   width: 25%;
   margin: .5rem;

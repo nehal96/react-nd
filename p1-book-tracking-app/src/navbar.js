@@ -11,9 +11,14 @@ class Navbar extends Component {
             <h4>Listopia</h4>
           </Link>
         </div>
-        <div className='navbar-search-bar'>
-          <input className='search-bar' type='text' placeholder='Search' />
+        <div className='navbar-button'>
+          <Link to='/search'>
+            <button className='btn search-button' type='button'>Search</button>
+          </Link>
         </div>
+        {/*<div className='navbar-search-bar'>
+          <input className='search-bar' type='text' placeholder='Search' />
+        </div>*/}
       </nav>
     )
   }

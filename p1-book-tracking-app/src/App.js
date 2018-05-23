@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI';
 import './App.css';
 import Navbar from './navbar';
 import BookShelf from './Bookshelf';
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -20,12 +21,21 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    //console.log(this.state)
     return (
       <div className="App">
-        <Navbar />
-        <BookShelf
-          books={this.state.books}
+        <Route exact path='/' render={() => (
+          <div>
+            <Navbar />
+            <BookShelf
+              books={this.state.books}
+            />
+          </div>
+        )}
+        />
+        <Route path='/search' render={({history}) => (
+          <Navbar />
+        )}
         />
       </div>
     );
