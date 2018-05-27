@@ -10,9 +10,9 @@ class ListBooks extends Component {
   render() {
     const { books } = this.props
 
-    books.forEach(function(book) {
-      console.log(book.authors)
-    })
+    //books.forEach(function(book) {
+      //console.log(book.authors)
+    //})
 
     return (
       <div className='card-deck-container'>
