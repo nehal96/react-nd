@@ -1,10 +1,21 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
 import { Route, Link } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
+    books: [],
+  }
+
+  // AJAX call to get book data from Udacity server
+  componentDidMount() {
+    BooksAPI.getAll()
+      .then((books) => {
+        this.setState(() => ({
+          books
+        }))
+      })
   }
 
   render() {
@@ -168,7 +179,7 @@ class BooksApp extends React.Component {
             </div>
             <div className="open-search">
               <Link to='/search'>
-                <a>Add a book</a>
+                Add a book
               </Link>
             </div>
           </div>
@@ -177,8 +188,8 @@ class BooksApp extends React.Component {
       <Route path='/search' render={(history) => (
         <div className="search-books">
           <div className="search-books-bar">
-            <Link to='/'>
-              <a className="close-search">Close</a>
+            <Link className='close-search' to='/'>
+              Close
             </Link>
             <div className="search-books-input-wrapper">
               {/*
