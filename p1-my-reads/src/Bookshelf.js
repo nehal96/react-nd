@@ -20,8 +20,8 @@ class Bookshelf extends Component {
       book.shelf === "read")
 
     return (
-      <div class="list-books-content">
-        <div class="bookshelf">
+      <div className="list-books-content">
+        <div className="bookshelf">
           <h2 className="bookshelf-title">Currently Reading</h2>
           <div className="bookshelf-books">
             <ListBooks
