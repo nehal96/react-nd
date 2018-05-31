@@ -27,7 +27,7 @@ class Search extends Component {
       BooksAPI.search(query)
         .then((searchResults) => {
           // If there are search results, update the state to reflect that.
-          if (searchResults) {
+          if (searchResults.length > 0) {
             this.setState({
               results: searchResults,
               error: false
@@ -50,6 +50,8 @@ class Search extends Component {
   render() {
     const { query, results, error } = this.state
     const updateShelf = this.props.updateShelf
+
+    console.log(error)
 
     return(
       <div className="search-books">
@@ -80,6 +82,11 @@ class Search extends Component {
               books={results}
               updateShelf={updateShelf}
             />
+          )}
+          { error && (
+            <div className="search-error">
+              <h3>Your search did not return any books.</h3>
+            </div>
           )}
         </div>
       </div>
