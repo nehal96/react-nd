@@ -21,6 +21,26 @@ class BooksApp extends React.Component {
       })
   }
 
+  // Method to update shelf on books database
+  updateShelf = (book, shelf) => {
+    // Update the shelf field of the book to match the newly selected shelf
+    book.shelf = shelf
+
+    // Remove the book with the old info from the books in state
+    let updatedBookList = this.state.books.filter((b) => b.id !== book.id)
+
+    // Add the book with the new info
+    updatedBookList.push(book)
+
+    // Set the state with the new book list
+    this.setState({
+      books: updatedBookList
+    })
+
+    // Update the original database to match
+    BooksAPI.update(book, shelf)
+  }
+
   render() {
     return (
       <div className="app">
@@ -31,6 +51,7 @@ class BooksApp extends React.Component {
             </div>
             <Bookshelf
               books={this.state.books}
+              updateShelf={this.updateShelf}
             />
             <div className="open-search">
               <Link to='/search'>

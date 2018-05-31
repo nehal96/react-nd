@@ -4,11 +4,12 @@ import Book from './Book.js'
 
 class ListBooks extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired
+    books: PropTypes.array.isRequired,
+    updateShelf: PropTypes.func.isRequired
   }
 
   render() {
-    const { books } = this.props
+    const { books, updateShelf } = this.props
 
     return (
       <div>
@@ -17,6 +18,7 @@ class ListBooks extends Component {
             <li key={book.id}>
               <Book
                 book={book}
+                updateShelf={updateShelf}
               />
             </li>
           ))}
