@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI'
 import ListBooks from './ListBooks'
 
 class Search extends Component {
+  static propTypes = {
+    updateShelf: PropTypes.func.isRequired
+  }
+
   state = {
     query: '',
     results: [],
@@ -44,6 +49,7 @@ class Search extends Component {
 
   render() {
     const { query, results, error } = this.state
+    const updateShelf = this.props.updateShelf
 
     return(
       <div className="search-books">
@@ -72,6 +78,7 @@ class Search extends Component {
           { results.length > 0 && (
             <ListBooks
               books={results}
+              updateShelf={updateShelf}
             />
           )}
         </div>
