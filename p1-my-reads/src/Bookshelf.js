@@ -27,6 +27,7 @@ class Bookshelf extends Component {
           <div className="bookshelf-books">
             <ListBooks
               books={currentlyReadingBooks}
+              bookshelf={books}
               updateShelf={updateShelf}
             />
           </div>
@@ -36,6 +37,7 @@ class Bookshelf extends Component {
           <div className="bookshelf-books">
             <ListBooks
               books={wantToReadBooks}
+              bookshelf={books}
               updateShelf={updateShelf}
             />
           </div>
@@ -45,6 +47,7 @@ class Bookshelf extends Component {
           <div className="bookshelf-books">
             <ListBooks
               books={readBooks}
+              bookshelf={books}
               updateShelf={updateShelf}
             />
           </div>

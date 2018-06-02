@@ -6,6 +6,7 @@ import ListBooks from './ListBooks'
 
 class Search extends Component {
   static propTypes = {
+    books: PropTypes.array.isRequired,
     updateShelf: PropTypes.func.isRequired
   }
 
@@ -49,9 +50,7 @@ class Search extends Component {
 
   render() {
     const { query, results, error } = this.state
-    const updateShelf = this.props.updateShelf
-
-    console.log(error)
+    const { books, updateShelf } = this.props
 
     return(
       <div className="search-books">
@@ -80,6 +79,7 @@ class Search extends Component {
           { results.length > 0 && (
             <ListBooks
               books={results}
+              bookshelf={books}
               updateShelf={updateShelf}
             />
           )}

@@ -5,11 +5,12 @@ import Book from './Book.js'
 class ListBooks extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
+    bookshelf: PropTypes.array,
     updateShelf: PropTypes.func.isRequired
   }
 
   render() {
-    const { books, updateShelf } = this.props
+    const { books, bookshelf, updateShelf } = this.props
 
     return (
       <div>
@@ -18,6 +19,7 @@ class ListBooks extends Component {
             <li key={book.id}>
               <Book
                 book={book}
+                bookshelf={bookshelf}
                 updateShelf={updateShelf}
               />
             </li>
