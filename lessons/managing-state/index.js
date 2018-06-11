@@ -39,3 +39,19 @@ function todos (state = [], action) {
 
   return state
 }
+
+
+const store = createStore(todo)
+
+store.subscribe(() => {
+  console.log('The new state is: ', store.getState())
+})
+
+store.dispatch({
+  type: 'ADD_TODO',
+  todo: {
+    id: 0,
+    name: 'Learn Redux',
+    complete: false
+  }
+})
