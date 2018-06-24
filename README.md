@@ -73,6 +73,8 @@ Articles, blogs, tutorials, docs, and other resources for React concepts posted 
 #### UI + Redux
 * [The What and Why of Redux](https://blog.pusher.com/the-what-and-why-of-redux/) - Pusher blog, Peter Mbanugo
 * [Leveling Up with React: Redux ](https://css-tricks.com/learning-react-redux/) - tutorial, Brad Westfall
+* [Component State vs. Redux Store](https://medium.com/netscape/component-state-vs-redux-store-1eb0c929277) - Medium post, Vivek Nayyar
+* [React + Redux: Separation of Concerns](https://medium.com/prod-io/react-redux-architecture-part-1-separation-of-concerns-812da3b08b46) - Medium post, Abhinav Jain
 
 #### Middleware
 * [Middleware](https://redux.js.org/advanced/middleware) - Redux Docs
