@@ -1,11 +1,11 @@
 # React Nanodegree Projects and Coursework
 
-Projects and coursework from Udacity's React Nanodegree
+Projects, coursework, and resources from Udacity's React Nanodegree
 
 
 ## Resources
 
-Articles, blogs, docs, and other resources for React concepts posted throughout the Classroom.
+Articles, blogs, tutorials, docs, and other resources for React concepts posted throughout the Classroom.
 
 ### 1. React Fundamentals
 
