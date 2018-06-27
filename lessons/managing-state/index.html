@@ -226,12 +226,18 @@
         return API.deleteTodo(todo.id)
                 .catch(() => {
                   this.props.store.dispatch(addTodoAction(todo))
-                  alert('An error occured. Try again.')
+                  alert('An error occurred. Try again.')
                 })
       }
 
       toggleItem = (id) => {
         this.props.store.dispatch(toggleTodoAction(id))
+
+        return API.saveTodoToggle(id)
+                .catch(() => {
+                  this.props.store.dispatch(toggleTodoAction(id))
+                  alert('An error occurred. Try again.')
+                })
       }
 
       render() {
@@ -274,7 +280,7 @@
         return API.deleteGoal(goal.id)
                 .catch(() => {
                   this.props.state.dispatch(addGoalAction(goal))
-                  alert('An error occured. Try again.')
+                  alert('An error occurred. Try again.')
                 })
       }
 
