@@ -81,6 +81,11 @@ Articles, blogs, tutorials, docs, and other resources for React concepts posted 
 * [applyMiddleware API Reference](https://redux.js.org/api-reference/applymiddleware) - Redux Docs
 
 #### Asynchronous Redux
-* [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Redux Thunk GitHub
+* [Redux Thunk](https://github.com/reduxjs/redux-thunk) - package, GitHub
 * [Async Flow](https://redux.js.org/advanced/async-flow) - Redux Docs
 * [Asynchronicity in Redux](https://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559) - StackOverflow, Dan Abramov
+* [Redux Thunk](https://blog.nojaf.com/2015/12/06/redux-thunk/) - blog, Florian Verdonck
+* [Why do we Need Middleware for Async Flow in Redux?](https://stackoverflow.com/questions/34570758/why-do-we-need-middleware-for-async-flow-in-redux) - StackOverflow, Dan Abramov
+* [Understanding How redux-thunk Works](https://medium.com/@gethylgeorge/understanding-how-redux-thunk-works-72de3bdebc50) - Medium post, Gethyl George Kurian
+* [Redux Promise](https://github.com/redux-utilities/redux-promise) - package, GitHub
+* [Redux Saga](https://github.com/redux-saga/redux-saga) - package, GitHub
