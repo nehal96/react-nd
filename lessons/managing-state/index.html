@@ -367,9 +367,6 @@
       }
 
       render() {
-        const { store } = this.props
-        const { loading } = store.getState()
-
         if (this.props.loading === true) {
           return <h3>Loading...</h3>
         }
@@ -388,6 +385,44 @@
     }))(App)
 
     const Context = React.createContext()
+
+    function connect (mapStateToProps) {
+      return (Component) => {
+        class Receiver extends React.Component {
+          componentDidMount() {
+            const { subscribe } = this.props.store
+
+            this.unsubscribe = subscribe(() => {
+              this.forceUpdate()
+            })
+          }
+
+          componentWillUnmount() {
+            this.unsubscribe()
+          }
+
+          render() {
+            const { dispatch, getState } = this.props.store
+            const state = getState()
+            const stateNeeded = mapStateToProps(state)
+
+            return <Component {...stateNeeded} dispatch={ dispatch }/>
+          }
+        }
+
+        class ConnectedComponent extends React.Component {
+          render() {
+            return (
+              <Context.Consumer>
+                {(store) => <Receiver store={ store } />}
+              </Context.Consumer>
+            )
+          }
+        }
+
+        return ConnectedComponent
+      }
+    }
 
     class Provider extends React.Component {
       render() {
