@@ -94,3 +94,7 @@ Articles, blogs, tutorials, docs, and other resources for React concepts posted 
 * [Container Components](https://medium.com/@learnreact/container-components-c0e67432e005) - Medium post, Learn React with chantastic
 * [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) - Medium post, Dan Abramov
 * [React's Context](https://reactjs.org/docs/context.html) - React Docs
+* [Organizing State](https://redux.js.org/faq/organizing-state) - Redux Docs
+* [Normalizing State Shape](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape)
+* [Redux for State Management in Large Web Apps](https://blog.mapbox.com/redux-for-state-management-in-large-web-apps-c7f3fab3ce9b) - Mapbox blog
+* [Five Tips for Working with Redux in Large Applications](https://techblog.appnexus.com/five-tips-for-working-with-redux-in-large-applications-89452af4fdcb) - AppNexus Engineering blog
