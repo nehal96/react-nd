@@ -7,6 +7,11 @@ Projects, coursework, and resources from Udacity's React Nanodegree
 
 Articles, blogs, tutorials, docs, and other resources for React concepts posted throughout the Classroom.
 
+A better [compilation of React and Redux links](https://github.com/markerikson/react-redux-links) by Mark Erikson
+
+### Sample Projects
+* [React/Redux Compilation](https://github.com/reduxjs/redux/tree/master/examples) - Redux GitHub
+
 ### 1. React Fundamentals
 
 #### Function Composition
