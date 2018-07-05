@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
   componentDidMount() {
@@ -13,10 +14,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login />
+        <LoadingBar />
+        { this.props.loading === true
+          ? null
+          : <Login />
+        }
       </div>
     );
   }
 }
 
-export default connect()(App)
+function mapStateToProps({ authedUser }) {
+  return {
+    // Stick with authedUser for now, users.length is giving weird results
+    loading: authedUser === null
+  }
+}
+
+export default connect(mapStateToProps)(App)
