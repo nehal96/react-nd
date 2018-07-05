@@ -3,3 +3,99 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+hr {
+  margin: 0;
+}
+
+select {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  padding: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transition: .15s ease-in-out;
+}
+
+.login {
+  height: 100vh;
+  background: linear-gradient(135deg, #e08283, #19B5FE)
+}
+
+.login-container {
+  width: 90%;
+  max-width: 35rem;
+  margin: auto auto;
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: .25rem;
+}
+
+.login-header {
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: 'Ubuntu', serif;
+  color: #444;
+}
+
+.login-header h3 {
+  margin: 0;
+  padding: .7rem 1rem;
+  font-stretch: expanded;
+}
+
+.login-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-body p {
+  padding: .7rem 1rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form select {
+  margin: .7rem 1rem;
+}
+
+.login-btn {
+  width: 50%;
+  margin: .7rem auto;
+  background-color: white;
+  border-color: lightblue;
+}
+
+.login-btn:hover {
+  background-color: lightblue;
+}
