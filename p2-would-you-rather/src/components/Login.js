@@ -2,10 +2,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Login extends Component {
+  state = {
+    value: this.props.userIDs[0]
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      value: e.target.value
+    })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(e.target)
+    console.log(this.state.value)
     // todo: handle submitting of username
   }
 
@@ -22,7 +32,7 @@ class Login extends Component {
           <div className='login-body'>
             <p>Select your username..</p>
             <form className='login-form' onSubmit={ this.handleSubmit }>
-              <select>
+              <select value={ this.state.value } onChange={ this.handleChange }>
                 { userIDs.map((userID) =>(
                   <option value={ userID } key={ userID }>{ userID }</option>
                 )) }
