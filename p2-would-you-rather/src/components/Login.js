@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
@@ -20,12 +21,15 @@ class Login extends Component {
     const { dispatch } = this.props
 
     dispatch(setAuthedUser(uid))
-
-    // todo: handle submitting of username
   }
 
   render() {
-    const { userIDs } = this.props
+    const { userIDs, authedUser } = this.props
+    const { toDashboard } = this.state
+
+    if (authedUser !== null) {
+      return <Redirect to='/' />
+    }
 
     return(
       <div className='login container'>
