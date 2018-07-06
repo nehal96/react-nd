@@ -5,6 +5,7 @@ import { handleInitialData } from '../actions/shared'
 import Login from './Login'
 import Dashboard from './Dashboard'
 import DetailedPoll from './DetailedPoll'
+import NewQuestion from './NewQuestion'
 import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
   }
 
   render() {
-    // const questionID = "8xf0y6ziyjabvozdd253nd"
+    const questionID = "8xf0y6ziyjabvozdd253nd"
 
     return (
       <Router>
@@ -25,12 +26,12 @@ class App extends Component {
               { this.props.loading === true
                 ? null
                 : <div>
-                    {/*<Route path='/' exact render={
+                    <Route path='/id' render={
                         () => <DetailedPoll questionID={ questionID } />
                     } />}
-                  */}
                     <Route path='/' exact component={ Dashboard } />
                     <Route path='/login' component={ Login } />
+                    <Route path='/new' component={ NewQuestion } />
                   </div>
               }
             </div>
@@ -41,10 +42,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ users }) {
+function mapStateToProps({ questions }) {
   return {
     // Stick with authedUser for now, users.length is giving weird results
-    loading: Object.keys(users).length === 0
+    loading: Object.keys(questions).length === 0
   }
 }
 
