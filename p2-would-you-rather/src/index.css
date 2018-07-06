@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: rgb(0, 0, 0, 0.05);
 }
 
 hr {
@@ -29,7 +30,6 @@ li {
 
 .container {
   display: flex;
-  background-color: rgb(0, 0, 0, 0.05);
 }
 
 .btn {
@@ -169,7 +169,7 @@ li {
 
 .avatar {
   height: 50px;
-  border-radius: 25px;
+  border-radius: .5rem;
   padding: .5rem;
 }
 
@@ -202,6 +202,13 @@ li {
   color: #444;
 }
 
+.would-you-rather-detailed {
+  margin: 1rem 0rem;
+  text-align: center;
+  color: #444;
+  font-size: 1.4rem;
+}
+
 .options {
   display: flex;
   justify-content: space-around;
@@ -217,11 +224,31 @@ li {
   align-items: center;
 }
 
+.detailed-option {
+  font-size: 1.2rem;
+  box-shadow: 0 10px 40px -10px rgba(0,64,128,.4);
+  transition-duration: .2s;
+  cursor: pointer;
+}
+
+.detailed-option:hover {
+  box-shadow: none;
+  transition-duration: .2s;
+}
+
 #option-1 {
   background-color: rgb(255, 153, 148, .9);
 }
 
+#option-1-detailed {
+  background-color: rgb(255, 153, 148, .9);
+}
+
 #option-2 {
+  background-color: rgb(148, 196, 255, .9);
+}
+
+#option-2-detailed {
   background-color: rgb(148, 196, 255, .9);
 }
 

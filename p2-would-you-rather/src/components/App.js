@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
 import Dashboard from './Dashboard'
+import DetailedPoll from './DetailedPoll'
 import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
@@ -14,6 +15,8 @@ class App extends Component {
   }
 
   render() {
+    // const questionID = "8xf0y6ziyjabvozdd253nd"
+
     return (
       <Router>
         <Fragment>
@@ -22,6 +25,10 @@ class App extends Component {
               { this.props.loading === true
                 ? null
                 : <div>
+                    {/*<Route path='/' exact render={
+                        () => <DetailedPoll questionID={ questionID } />
+                    } />}
+                  */}
                     <Route path='/' exact component={ Dashboard } />
                     <Route path='/login' component={ Login } />
                   </div>
