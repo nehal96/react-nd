@@ -25,7 +25,6 @@ class Login extends Component {
 
   render() {
     const { userIDs, authedUser } = this.props
-    const { toDashboard } = this.state
 
     if (authedUser !== null) {
       return <Redirect to='/' />
