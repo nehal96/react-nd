@@ -86,7 +86,7 @@ select {
 }
 
 .login-form select {
-  margin: .7rem 1rem;
+  margin: 0rem 0.7rem 0.7rem;
 }
 
 .login-btn {

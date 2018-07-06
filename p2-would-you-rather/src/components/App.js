@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
+import Dashboard from './Dashboard'
 import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
@@ -24,10 +25,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ users }) {
   return {
     // Stick with authedUser for now, users.length is giving weird results
-    loading: authedUser === null
+    loading: Object.keys(users).length === 0
   }
 }
 

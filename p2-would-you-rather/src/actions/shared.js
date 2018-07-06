@@ -5,7 +5,7 @@ import { setAuthedUser } from './authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 // Use constant until I figure out how to connect login
-const AUTHED_ID = 'tylermcginnis'
+const INIT_ID = null
 
 export function handleInitialData() {
   return (dispatch) => {
@@ -14,7 +14,7 @@ export function handleInitialData() {
       .then(({users, questions}) => {
         dispatch(receiveUsers(users))
         dispatch(receiveQuestions(questions))
-        dispatch(setAuthedUser(AUTHED_ID))
+        dispatch(setAuthedUser(INIT_ID))
         dispatch(hideLoading())
       })
   }

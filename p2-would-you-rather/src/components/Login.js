@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
   state = {
-    value: this.props.userIDs[0]
+    uid: this.props.userIDs[0]
   }
 
   handleChange = (e) => {
     this.setState({
-      value: e.target.value
+      uid: e.target.value
     })
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(this.state.value)
+    const { uid } = this.state
+    const { dispatch } = this.props
+
+    dispatch(setAuthedUser(uid))
+
     // todo: handle submitting of username
   }
 
@@ -26,13 +31,13 @@ class Login extends Component {
       <div className='login container'>
         <div className='login-container'>
           <div className='login-header'>
-            <h3 className='text-center'>Login</h3>
+            <h3 className='text-center'>Psuedo-Login</h3>
           </div>
           <hr></hr>
           <div className='login-body'>
             <p>Select your username..</p>
             <form className='login-form' onSubmit={ this.handleSubmit }>
-              <select value={ this.state.value } onChange={ this.handleChange }>
+              <select value={ this.state.uid } onChange={ this.handleChange }>
                 { userIDs.map((userID) =>(
                   <option value={ userID } key={ userID }>{ userID }</option>
                 )) }
@@ -46,10 +51,10 @@ class Login extends Component {
   }
 }
 
-function mapStateToProps({ users }) {
+function mapStateToProps({ users, authedUser }) {
   return {
-    userIDs: Object.keys(users)
-      .sort()
+    userIDs: Object.keys(users).sort(),
+    authedUser
   }
 }
 
