@@ -9,7 +9,6 @@ class LeaderProfile extends Component {
       avatarURL, name, questionsAnswered, questionsCreated, score
     } = user
 
-    console.log(score)
     return(
       <div className='panel'>
         <div className='panel-header teal-panel'>

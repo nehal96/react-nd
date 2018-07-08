@@ -4,8 +4,27 @@ import { Redirect } from 'react-router-dom'
 import UndetailedPoll from './UndetailedPoll'
 
 class Dashboard extends Component {
+  state = {
+    showUnanswered: true
+  }
+
+  handleChange = (e) => {
+    const elementID = e.target.id
+
+    elementID === 'answered-q-btn'
+    ? this.setState({
+        showUnanswered: false
+      })
+    : this.setState({
+        showUnanswered: true
+      })
+  }
+
   render() {
-    const { authedUser, questionIDs } = this.props
+    const { showUnanswered } = this.state
+    const {
+      authedUser, unansweredQuestionIDs, answeredQuestionIDs
+    } = this.props
 
     // if (authedUser === null) {
     //   return <Redirect to='/login' />
@@ -14,16 +33,44 @@ class Dashboard extends Component {
     return(
       <div className='container'>
         <div className='dashboard-container'>
-          <div className='question-controls'>
-            <div id='unanswered-q-btn' className='question-type-btn active-btn'>Unanswered questions</div>
-            <div id='answered-q-btn' className='question-type-btn'>Answered questions</div>
-          </div>
+          {/* There must be a shorter, less copy-pasty way of doing this
+              Check React.createClass (I think) */}
+          { showUnanswered === true
+            ? <div className='question-controls'>
+                <div
+                  id='unanswered-q-btn'
+                  className='question-type-btn active-btn'
+                  onClick={ this.handleChange }>Unanswered questions</div>
+                <div
+                  id='answered-q-btn'
+                  className='question-type-btn'
+                  onClick={ this.handleChange }>Answered questions</div>
+              </div>
+            : <div className='question-controls'>
+                <div
+                  id='unanswered-q-btn'
+                  className='question-type-btn'
+                  onClick={ this.handleChange }>Unanswered questions</div>
+                <div
+                  id='answered-q-btn'
+                  className='question-type-btn active-btn'
+                  onClick={ this.handleChange }>Answered questions</div>
+              </div>
+          }
+
           <ul className='questions'>
-            { questionIDs.map((questionID) => (
-              <li key={ questionID }>
-                <UndetailedPoll questionID={ questionID }/>
-              </li>
-            ))}
+            { showUnanswered === true
+              ? unansweredQuestionIDs.map((questionID) => (
+                  <li key={ questionID }>
+                    <UndetailedPoll questionID={ questionID }/>
+                  </li>
+                ))
+              : answeredQuestionIDs.map((questionID) => (
+                  <li key={ questionID }>
+                    <UndetailedPoll questionID={ questionID }/>
+                  </li>
+                ))
+              }
           </ul>
         </div>
       </div>
@@ -31,10 +78,15 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, questions }) {
+function mapStateToProps({ authedUser, questions, users }) {
+  const answeredQuestionIDs = Object.keys(users[authedUser].answers)
+  const unansweredQuestionIDs = Object.keys(questions)
+    .filter((questionID) => answeredQuestionIDs.indexOf(questionID) < 0)
+
   return {
     authedUser,
-    questionIDs: Object.keys(questions)
+    answeredQuestionIDs,
+    unansweredQuestionIDs
   }
 }
 
