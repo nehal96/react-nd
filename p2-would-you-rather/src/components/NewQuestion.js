@@ -33,10 +33,10 @@ class NewQuestion extends Component {
       <div class='container'>
         <div class='dashboard-container'>
           <div className='question'>
-            <div className='question-asker'>
+            <div className='panel-header teal-panel'>
               <h3 className='header-title'>Create a Question</h3>
             </div>
-            <div class='question-body'>
+            <div class='panel-body'>
               <h4 class='would-you-rather'>Would You Rather...</h4>
               <form className='login-form' onSubmit={ this.handleSubmit }>
                 <input

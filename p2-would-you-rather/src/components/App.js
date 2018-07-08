@@ -6,6 +6,7 @@ import Login from './Login'
 import Dashboard from './Dashboard'
 import DetailedPoll from './DetailedPoll'
 import NewQuestion from './NewQuestion'
+import Leaderboard from './Leaderboard'
 import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
@@ -28,10 +29,11 @@ class App extends Component {
                 : <div>
                     <Route path='/id' render={
                         () => <DetailedPoll questionID={ questionID } />
-                    } />}
+                    } />
                     <Route path='/' exact component={ Dashboard } />
                     <Route path='/login' component={ Login } />
                     <Route path='/new' component={ NewQuestion } />
+                    <Route path='/leaderboard' component={ Leaderboard } />
                   </div>
               }
             </div>
@@ -44,7 +46,6 @@ class App extends Component {
 
 function mapStateToProps({ questions }) {
   return {
-    // Stick with authedUser for now, users.length is giving weird results
     loading: Object.keys(questions).length === 0
   }
 }

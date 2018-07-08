@@ -11,11 +11,11 @@ class UndetailedPoll extends Component {
 
     return (
       <div className='question'>
-        <div className='question-asker'>
+        <div className='panel-header'>
           <img src={ avatarURL } alt={ `Avatar of ${name}`} className='avatar'/>
           <p><strong>{ name }</strong> asks:</p>
         </div>
-        <div className='question-body'>
+        <div className='panel-body'>
           <h4 className='would-you-rather'>Would You Rather...</h4>
           <div className='options'>
             <div id='option-1' className='option'>{ optionOne.text }</div>
