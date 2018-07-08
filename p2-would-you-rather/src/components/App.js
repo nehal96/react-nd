@@ -42,9 +42,9 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ questions }) {
+function mapStateToProps({ authedUser }) {
   return {
-    loading: Object.keys(questions).length === 0
+    loading: authedUser === null
   }
 }
 

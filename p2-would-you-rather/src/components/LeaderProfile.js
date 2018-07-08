@@ -39,7 +39,7 @@ class LeaderProfile extends Component {
             <div className='score-circle'>
               <svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
                 <g>
-                  <circle r="40%" cx="50%" cy="50%" fill="orange"/>
+                  <circle r="40%" cx="50%" cy="50%" fill="rgb(255,179,39)"/>
                   <text x="50%" y="50%" className="score" textAnchor="middle" dy="0.3em">{ score }</text>
                 </g>
               </svg>
