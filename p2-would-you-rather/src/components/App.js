@@ -27,11 +27,9 @@ class App extends Component {
               { this.props.loading === true
                 ? null
                 : <div>
-                    <Route path='/id' render={
-                        () => <DetailedPoll questionID={ questionID } />
-                    } />
                     <Route path='/' exact component={ Dashboard } />
                     <Route path='/login' component={ Login } />
+                    <Route path='/question/:id' component={ DetailedPoll }/>
                     <Route path='/new' component={ NewQuestion } />
                     <Route path='/leaderboard' component={ Leaderboard } />
                   </div>

@@ -281,6 +281,12 @@ svg {
   transition-duration: .2s;
 }
 
+.link-btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .teal-panel {
   background-color: rgb(0,205,205)
 }

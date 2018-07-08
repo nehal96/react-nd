@@ -44,8 +44,10 @@ class DetailedPoll extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, questions, users }, { questionID }) {
-  const question = questions[questionID]
+function mapStateToProps({ authedUser, questions, users }, props) {
+  // Get ID from URL
+  const { id } = props.match.params
+  const question = questions[id]
   const user = users[question.author]
 
   return {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
+import { Link } from 'react-router-dom'
 
 class UndetailedPoll extends Component {
   render() {
@@ -22,7 +23,9 @@ class UndetailedPoll extends Component {
             <div className='option-divider'>OR</div>
             <div id='option-2' className='option'>{ optionTwo.text }</div>
           </div>
-          <button className='btn view-poll-btn'>View Poll</button>
+          <Link to={`/question/${id}`} className='link-btn'>
+            <button className='btn view-poll-btn'>View Poll</button>
+          </Link>
         </div>
       </div>
     )
