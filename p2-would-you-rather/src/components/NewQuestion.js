@@ -32,7 +32,7 @@ class NewQuestion extends Component {
     return(
       <div class='container'>
         <div class='dashboard-container'>
-          <div className='question'>
+          <div className='panel'>
             <div className='panel-header teal-panel'>
               <h3 className='header-title'>Create a Question</h3>
             </div>

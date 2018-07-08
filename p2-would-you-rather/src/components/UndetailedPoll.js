@@ -10,7 +10,7 @@ class UndetailedPoll extends Component {
     } = question
 
     return (
-      <div className='question'>
+      <div className='panel'>
         <div className='panel-header'>
           <img src={ avatarURL } alt={ `Avatar of ${name}`} className='avatar'/>
           <p><strong>{ name }</strong> asks:</p>

@@ -19,7 +19,7 @@ class DetailedPoll extends Component {
 
     return(
       <div className='dashboard-container'>
-        <div className='question'>
+        <div className='panel'>
           <div className='panel-header'>
             <img src={ avatarURL } alt={ `Avatar of ${name}`} className='avatar'/>
             <p>Asked by <strong>{ name }</strong></p>

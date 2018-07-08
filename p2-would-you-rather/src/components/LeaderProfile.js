@@ -11,7 +11,7 @@ class LeaderProfile extends Component {
 
     console.log(score)
     return(
-      <div className='question'>
+      <div className='panel'>
         <div className='panel-header teal-panel'>
           <h3 className='user-rank'>#</h3>
           <h3 className='panel-title'>{ name }</h3>
@@ -35,7 +35,15 @@ class LeaderProfile extends Component {
             </div>
           </div>
           <div className='score-container'>
-            <div className='score'>{ score }</div>
+            {/*<div className='score'>{ score }</div> */}
+            <div className='score-circle'>
+              <svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                <g>
+                  <circle r="40%" cx="50%" cy="50%" fill="orange"/>
+                  <text x="50%" y="50%" className="score" textAnchor="middle" dy="0.3em">{ score }</text>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
