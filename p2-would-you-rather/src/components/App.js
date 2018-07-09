@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
 import Dashboard from './Dashboard'
-import DetailedPoll from './DetailedPoll'
+import Question from './Question'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
 import LoadingBar from 'react-redux-loading'
@@ -29,7 +29,7 @@ class App extends Component {
                 : <div>
                     <Route path='/' exact component={ Dashboard } />
                     <Route path='/login' component={ Login } />
-                    <Route path='/question/:id' component={ DetailedPoll }/>
+                    <Route path='/question/:id' component={ Question }/>
                     <Route path='/new' component={ NewQuestion } />
                     <Route path='/leaderboard' component={ Leaderboard } />
                   </div>

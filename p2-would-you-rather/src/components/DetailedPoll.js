@@ -4,11 +4,11 @@ import { formatQuestion } from '../utils/helpers'
 
 class DetailedPoll extends Component {
   handleOptionOne = (e) => {
-    // todo:
+    console.log(e.target)
   }
 
   handleOptionTwo = (e) => {
-    // todo:
+    console.log(e.target)
   }
 
   render() {
@@ -46,8 +46,9 @@ class DetailedPoll extends Component {
 
 function mapStateToProps({ authedUser, questions, users }, props) {
   // Get ID from URL
-  const { id } = props.match.params
-  const question = questions[id]
+  const { questionID } = props
+  // console.log(questionID)
+  const question = questions[questionID]
   const user = users[question.author]
 
   return {

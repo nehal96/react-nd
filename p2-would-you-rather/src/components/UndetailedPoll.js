@@ -11,7 +11,6 @@ class UndetailedPoll extends Component {
     const {
       id, name, avatarURL, author, timestamp, optionOne, optionTwo
     } = question
-    console.log(answer)
 
     return (
       <div className='panel'>
@@ -62,7 +61,6 @@ function mapStateToProps({ authedUser, questions, users }, props) {
   const answer = answeredPoll === true
     ? users[authedUser].answers[questionID]
     : null
-  // console.log(answer)
 
   return {
     authedUser,
