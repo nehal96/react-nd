@@ -29,6 +29,16 @@ svg {
   width: 100%;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -284,6 +294,34 @@ svg {
   width: 15%;
   margin: auto auto;
   color: #444;
+}
+
+.results {
+  padding: .5rem;
+  margin: 1rem;
+}
+
+.option-results {
+  /* padding: .5rem; */
+  width: 40%;
+  /* border: 1px solid black; */
+}
+
+.option-votes {
+  width: 60%;
+  /* border: 1px solid black; */
+}
+
+.percent-bar {
+  display: flex;
+  align-items: center;
+  height: 1.75rem;
+  background-color: #6BB9F0;
+}
+
+.percent-text-label {
+  font-size: 90%;
+  padding-left: .4rem;
 }
 
 .view-poll-btn {

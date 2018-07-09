@@ -7,7 +7,7 @@ import { formatQuestion } from '../utils/helpers'
 
 class UndetailedPoll extends Component {
   render() {
-    const { question, answer } = this.props
+    const { question, answer, answeredPoll } = this.props
     const {
       id, name, avatarURL, author, timestamp, optionOne, optionTwo
     } = question
@@ -45,7 +45,10 @@ class UndetailedPoll extends Component {
               <div className='option option-2 option-voted'>{ optionTwo.text }</div>
             </div>
           )}
-          <Link to={`/question/${id}`} className='link-btn'>
+          <Link to={{
+              pathname: `/question/${id}`,
+              state: { answeredPoll }
+            }} className='link-btn'>
             <button className='btn view-poll-btn'>View Poll</button>
           </Link>
         </div>
@@ -64,6 +67,7 @@ function mapStateToProps({ authedUser, questions, users }, props) {
 
   return {
     authedUser,
+    answeredPoll,
     answer,
     question: question
       ? formatQuestion(question, user)

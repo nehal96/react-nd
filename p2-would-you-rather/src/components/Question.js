@@ -6,7 +6,7 @@ import { handleVoteOnQuestion } from '../actions/shared'
 
 class Question extends Component {
   state = {
-    showResults: false
+    showResults: this.props.answeredPoll
   }
 
   handleVote = (e) => {
@@ -36,7 +36,7 @@ class Question extends Component {
     return(
       <div>
         { showResults === true
-          ? <PollResults />
+          ? <PollResults questionID= { questionID }/>
           : <DetailedPoll questionID={ questionID } handleVote={ this.handleVote } />
         }
       </div>
@@ -46,9 +46,11 @@ class Question extends Component {
 
 function mapStateToProps({ authedUser, questions }, props) {
   const { id } = props.match.params
+  const { answeredPoll } = props.location.state
 
   return {
     authedUser,
+    answeredPoll,
     questions,
     questionID: id
   }
