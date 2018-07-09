@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
+import { handleVoteOnQuestion } from '../actions/shared'
 
 class DetailedPoll extends Component {
   handleOptionOne = (e) => {
-    console.log(e.target)
+    const { question, dispatch } = this.props
+    const qid = question.id
+    const answer = 'optionOne'
+
+    dispatch(handleVoteOnQuestion(qid, answer))
   }
 
   handleOptionTwo = (e) => {
-    console.log(e.target)
+    const { question, dispatch } = this.props
+    const qid = question.id
+    const answer = 'optionTwo'
+
+    dispatch(handleVoteOnQuestion(qid, answer))
   }
 
   render() {
