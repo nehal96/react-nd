@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formatQuestion } from '../utils/helpers'
 import { Link } from 'react-router-dom'
+import { FaCheckSquare } from 'react-icons/lib/fa'
+import { formatQuestion } from '../utils/helpers'
+
 
 class UndetailedPoll extends Component {
   render() {
-    const { question } = this.props
+    const { question, answer } = this.props
     const {
       id, name, avatarURL, author, timestamp, optionOne, optionTwo
     } = question
+    console.log(answer)
 
     return (
       <div className='panel'>
@@ -18,11 +21,31 @@ class UndetailedPoll extends Component {
         </div>
         <div className='panel-body'>
           <h4 className='would-you-rather'>Would You Rather...</h4>
-          <div className='options'>
-            <div id='option-1' className='option'>{ optionOne.text }</div>
-            <div className='option-divider'>OR</div>
-            <div id='option-2' className='option'>{ optionTwo.text }</div>
-          </div>
+          { /* Gotta be a better/shorter way of doing this */}
+          { answer === null && (
+            <div className='options'>
+              <div className='option option-1'>{ optionOne.text }</div>
+              <div className='option-divider'>OR</div>
+              <div className='option option-2'>{ optionTwo.text }</div>
+            </div>
+          )}
+          { (answer !== null && answer === 'optionOne') && (
+            <div className='options'>
+              <div className='option option-1 option-voted'>
+                <div>{ optionOne.text }</div>
+                {/* <span ><FaCheckSquare className='voted-icon' x='0' /></span> */}
+              </div>
+              <div className='option-divider'>OR</div>
+              <div className='option option-2 option-not-voted'>{ optionTwo.text }</div>
+            </div>
+          )}
+          { (answer !== null && answer === 'optionTwo') && (
+            <div className='options'>
+              <div className='option option-1 option-not-voted'>{ optionOne.text }</div>
+              <div className='option-divider'>OR</div>
+              <div className='option option-2 option-voted'>{ optionTwo.text }</div>
+            </div>
+          )}
           <Link to={`/question/${id}`} className='link-btn'>
             <button className='btn view-poll-btn'>View Poll</button>
           </Link>
@@ -32,12 +55,18 @@ class UndetailedPoll extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, questions, users }, { questionID }) {
+function mapStateToProps({ authedUser, questions, users }, props) {
+  const { questionID, answeredPoll } = props
   const question = questions[questionID]
   const user = users[question.author]
+  const answer = answeredPoll === true
+    ? users[authedUser].answers[questionID]
+    : null
+  // console.log(answer)
 
   return {
     authedUser,
+    answer,
     question: question
       ? formatQuestion(question, user)
       : null

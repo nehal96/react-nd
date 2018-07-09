@@ -62,12 +62,16 @@ class Dashboard extends Component {
             { showUnanswered === true
               ? unansweredQuestionIDs.map((questionID) => (
                   <li key={ questionID }>
-                    <UndetailedPoll questionID={ questionID }/>
+                    <UndetailedPoll
+                      questionID={ questionID }
+                      answeredPoll={ !showUnanswered }/>
                   </li>
                 ))
               : answeredQuestionIDs.map((questionID) => (
                   <li key={ questionID }>
-                    <UndetailedPoll questionID={ questionID }/>
+                    <UndetailedPoll
+                      questionID={ questionID }
+                      answeredPoll={ !showUnanswered }/>
                   </li>
                 ))
               }
