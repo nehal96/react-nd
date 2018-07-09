@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   render() {
-    const questionID = "8xf0y6ziyjabvozdd253nd"
+    // const questionID = "8xf0y6ziyjabvozdd253nd"
 
     return (
       <Router>

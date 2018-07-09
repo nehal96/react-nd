@@ -4,24 +4,8 @@ import { formatQuestion } from '../utils/helpers'
 import { handleVoteOnQuestion } from '../actions/shared'
 
 class DetailedPoll extends Component {
-  handleOptionOne = (e) => {
-    const { question, dispatch } = this.props
-    const qid = question.id
-    const answer = 'optionOne'
-
-    dispatch(handleVoteOnQuestion(qid, answer))
-  }
-
-  handleOptionTwo = (e) => {
-    const { question, dispatch } = this.props
-    const qid = question.id
-    const answer = 'optionTwo'
-
-    dispatch(handleVoteOnQuestion(qid, answer))
-  }
-
   render() {
-    const { question } = this.props
+    const { question, handleVote } = this.props
     const {
       id, name, avatarURL, author, timestamp, optionOne, optionTwo
     } = question
@@ -39,12 +23,14 @@ class DetailedPoll extends Component {
                 <div
                   id='option-1-detailed'
                   className='option detailed-option'
-                  onClick={ this.handleOptionOne }>{ optionOne.text }</div>
+                  onClick={ handleVote }>{ optionOne.text }
+                </div>
                 <div className='option-divider'>OR</div>
                 <div
                   id='option-2-detailed'
                   className='option detailed-option'
-                  onClick={ this.handleOptionTwo }>{ optionTwo.text }</div>
+                  onClick={ handleVote }>{ optionTwo.text }
+                </div>
               </div>
           </div>
         </div>
@@ -55,13 +41,14 @@ class DetailedPoll extends Component {
 
 function mapStateToProps({ authedUser, questions, users }, props) {
   // Get ID from URL
-  const { questionID } = props
+  const { questionID, handleVote } = props
   // console.log(questionID)
   const question = questions[questionID]
   const user = users[question.author]
 
   return {
     authedUser,
+    handleVote,
     question: question
       ? formatQuestion(question, user)
       : null
