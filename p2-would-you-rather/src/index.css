@@ -203,8 +203,23 @@ td {
   border-top-right-radius: .5rem;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .panel-header p {
   margin: 0;
+}
+
+.panel-user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.panel-time-info {
+  padding: 0rem 1rem;
+  color: #555;
 }
 
 .panel-body {

@@ -34,7 +34,6 @@ class LeaderProfile extends Component {
             </div>
           </div>
           <div className='score-container'>
-            {/*<div className='score'>{ score }</div> */}
             <div className='score-circle'>
               <svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
                 <g>
@@ -52,7 +51,6 @@ class LeaderProfile extends Component {
 
 function mapStateToProps({ authedUser, users }, { uid }) {
   const user = users[uid]
-  //const answeredQuestions = Object.keys(users.uid.answers).length
 
   return {
     uid,

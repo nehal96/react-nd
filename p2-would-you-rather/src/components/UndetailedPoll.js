@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FaCheckSquare } from 'react-icons/lib/fa'
-import { formatQuestion } from '../utils/helpers'
+import { formatQuestion, formatDate } from '../utils/helpers'
 
 
 class UndetailedPoll extends Component {
@@ -14,9 +14,14 @@ class UndetailedPoll extends Component {
 
     return (
       <div className='panel'>
-        <div className='panel-header'>
-          <img src={ avatarURL } alt={ `Avatar of ${name}`} className='avatar'/>
-          <p><strong>{ name }</strong> asks:</p>
+        <div className='panel-header space-between'>
+          <div className='panel-user-info'>
+            <img src={ avatarURL } alt={ `Avatar of ${name}`} className='avatar'/>
+            <p><strong>{ name }</strong> asks:</p>
+          </div>
+          <div className='panel-time-info'>
+            <p>{ formatDate(timestamp) }</p>
+          </div>
         </div>
         <div className='panel-body'>
           <h4 className='would-you-rather'>Would You Rather...</h4>

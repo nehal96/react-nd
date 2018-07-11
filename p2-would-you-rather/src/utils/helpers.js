@@ -28,3 +28,9 @@ export function formatProfile(user) {
     score
   }
 }
+
+export function formatDate (timestamp) {
+  const d = new Date(timestamp)
+  const time = d.toString()
+  return time.substr(4, 6) + ', ' + time.substr(11, 4)
+}
