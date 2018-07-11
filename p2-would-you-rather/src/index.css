@@ -14,6 +14,11 @@ select {
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
 ul {
   padding-left: 0;
 }
@@ -41,6 +46,50 @@ td {
 
 .text-center {
   text-align: center;
+}
+
+.nav {
+  display: flex;
+  width: 90%;
+  margin: .5rem auto;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.nav ul {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li {
+  padding: 0rem 1rem;
+  text-decoration: none;
+}
+
+.login-logout {
+  margin: 1em 0em;
+}
+
+.logout-btn {
+  justify-content: flex-start;
+  background-color: lightblue;
+  box-shadow: 0 10px 40px -10px rgba(0,64,128,.4);
+}
+
+.logout-btn:hover {
+  box-shadow: none;
+  transition-duration: .2s;
+}
+
+/* .nav li:first-child {
+  padding-left: 0;
+} */
+
+.active-nav {
+  font-weight: bold;
 }
 
 .container {
@@ -128,8 +177,12 @@ td {
 .dashboard-container {
   width: 90%;
   max-width: 40rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
   /* border: 1px solid black; */
+}
+
+.dashboard-container h1 {
+  margin-top: 0;
 }
 
 .question-controls {
