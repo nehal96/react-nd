@@ -386,8 +386,8 @@ td {
 }
 
 .option-results {
-  /* padding: .5rem; */
   width: 40%;
+  /* font-size: 1rem; */
   /* border: 1px solid black; */
 }
 
@@ -401,11 +401,16 @@ td {
   align-items: center;
   height: 1.75rem;
   background-color: #6BB9F0;
+  margin-bottom: .5rem;
 }
 
 .percent-text-label {
   font-size: 90%;
   padding-left: .4rem;
+}
+
+.vote-details {
+  color: #aaa;
 }
 
 .view-poll-btn {

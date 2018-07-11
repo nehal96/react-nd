@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom'
 
 class PollResults extends Component {
   render() {
-    const { question } = this.props
-    const { optionOne, optionTwo } = question
-    const optionOneVotes = optionOne.votes
-    const optionTwoVotes = optionTwo.votes
-    const totalVotes = optionOneVotes.length + optionTwoVotes.length
-    const optionOnePercent = Math.round((optionOneVotes.length / totalVotes) * 100)
-    const optionTwoPercent = Math.round((optionTwoVotes.length / totalVotes) * 100)
+    const {
+      optionOne, optionTwo, optionOneVotes, optionTwoVotes, totalVotes,
+      optionOnePercent, optionTwoPercent
+    } = this.props
 
     return(
       <div>
@@ -29,6 +26,7 @@ class PollResults extends Component {
                       <div className='percent-bar' style={ {width: optionOnePercent + '%'} }>
                         <div className='percent-text-label'>{ optionOnePercent + '%' }</div>
                       </div>
+                      <div className='vote-details'>{ optionOneVotes.length + ' of ' + totalVotes + ' votes'}</div>
                     </td>
                   </tr>
                   <tr>
@@ -37,6 +35,7 @@ class PollResults extends Component {
                       <div className='percent-bar' style={ {width: optionTwoPercent + '%'} }>
                         <div className='percent-text-label'>{ optionTwoPercent + '%' }</div>
                       </div>
+                      <div className='vote-details'>{ optionTwoVotes.length + ' of ' + totalVotes + ' votes'}</div>
                     </td>
                   </tr>
                 </tbody>
@@ -53,10 +52,22 @@ class PollResults extends Component {
 function mapStateToProps({ authedUser, questions }, props) {
   const { questionID } = props
   const question = questions[questionID]
+  const { optionOne, optionTwo } = question
+  const optionOneVotes = optionOne.votes
+  const optionTwoVotes = optionTwo.votes
+  const totalVotes = optionOneVotes.length + optionTwoVotes.length
+  const optionOnePercent = Math.round((optionOneVotes.length / totalVotes) * 100)
+  const optionTwoPercent = Math.round((optionTwoVotes.length / totalVotes) * 100)
 
   return {
     authedUser,
-    question
+    optionOne,
+    optionTwo,
+    optionOneVotes,
+    optionTwoVotes,
+    totalVotes,
+    optionOnePercent,
+    optionTwoPercent
   }
 }
 
