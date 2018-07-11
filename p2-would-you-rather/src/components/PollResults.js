@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class PollResults extends Component {
   render() {
@@ -40,6 +41,7 @@ class PollResults extends Component {
                   </tr>
                 </tbody>
               </table>
+              <Link className='btn view-poll-btn' to='/'>Back to Questions</Link>
             </div>
           </div>
         </div>

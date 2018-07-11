@@ -24,19 +24,19 @@ class DetailedPoll extends Component {
           </div>
           <div className='panel-body'>
             <h3 className='would-you-rather-detailed'>Would You Rather...</h3>
-              <div className='options'>
-                <div
-                  id='option-1-detailed'
-                  className='option detailed-option'
-                  onClick={ handleVote }>{ optionOne.text }
-                </div>
-                <div className='option-divider'>OR</div>
-                <div
-                  id='option-2-detailed'
-                  className='option detailed-option'
-                  onClick={ handleVote }>{ optionTwo.text }
-                </div>
+            <div className='options'>
+              <div
+                id='option-1-detailed'
+                className='option detailed-option'
+                onClick={ handleVote }>{ optionOne.text }
               </div>
+              <div className='option-divider'>OR</div>
+              <div
+                id='option-2-detailed'
+                className='option detailed-option'
+                onClick={ handleVote }>{ optionTwo.text }
+              </div>
+            </div>
           </div>
         </div>
       </div>
