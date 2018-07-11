@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import UndetailedPoll from './UndetailedPoll'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 class Dashboard extends Component {
   state = {
@@ -81,6 +82,7 @@ class Dashboard extends Component {
             </ul>
           </div>
         </div>
+        <Footer />
       </Fragment>
     )
   }

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import DetailedPoll from './DetailedPoll'
 import PollResults from './PollResults'
 import Navbar from './Navbar'
+import Footer from './Footer'
 import ErrorPage from './ErrorPage'
 import { handleVoteOnQuestion } from '../actions/shared'
 
@@ -53,6 +54,7 @@ class Question extends Component {
             : <DetailedPoll questionID={ questionID } handleVote={ this.handleVote } />
           }
         </div>
+        <Footer />
       </Fragment>
     )
   }

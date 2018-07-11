@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import LeaderProfile from './LeaderProfile'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 class Leaderboard extends Component {
   render() {
@@ -23,6 +24,7 @@ class Leaderboard extends Component {
             ))}
           </div>
         </div>
+        <Footer />
       </Fragment>
     )
   }
