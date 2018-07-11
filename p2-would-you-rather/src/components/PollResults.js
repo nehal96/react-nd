@@ -66,7 +66,7 @@ function mapStateToProps({ authedUser, questions }, props) {
   const question = questions[questionID]
 
   return {
-    results: formatPollResults(question)
+    results: formatPollResults(question, authedUser)
   }
 }
 
