@@ -29,6 +29,27 @@ export function formatProfile(user) {
   }
 }
 
+export function formatPollResults(question, authedUser) {
+  const { optionOne, optionTwo } = question
+  const optionOneVotes = optionOne.votes
+  const optionTwoVotes = optionTwo.votes
+  const totalVotes = optionOneVotes.length + optionTwoVotes.length
+  const optionOnePercent = Math.round((optionOneVotes.length / totalVotes) * 100)
+  const optionTwoPercent = Math.round((optionTwoVotes.length / totalVotes) * 100)
+  const chosenOption = optionOneVotes.filter((user) => user === authedUser).length === 1
+    ? 'optionOne'
+    : 'optionTwo'
+
+  return {
+    optionOne,
+    optionTwo,
+    totalVotes,
+    optionOnePercent,
+    optionTwoPercent,
+    chosenOption
+  }
+}
+
 export function formatDate (timestamp) {
   const d = new Date(timestamp)
   const time = d.toString()

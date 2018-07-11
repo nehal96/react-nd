@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FaCheckSquare } from 'react-icons/lib/fa'
+import { formatPollResults } from '../utils/helpers'
 
 class PollResults extends Component {
   render() {
+    const { results } = this.props
     const {
-      optionOne, optionTwo, optionOneVotes, optionTwoVotes, totalVotes,
-      optionOnePercent, optionTwoPercent, chosenOption
-    } = this.props
+      optionOne, optionTwo, totalVotes, optionOnePercent, optionTwoPercent, chosenOption
+    } = results
 
     return(
       <div>
@@ -32,7 +33,7 @@ class PollResults extends Component {
                             <div className='percent-text-label'>{ optionOnePercent + '%' }</div>
                           </div>
                       }
-                      <div className='vote-details'>{ optionOneVotes.length + ' of ' + totalVotes + ' votes'}</div>
+                      <div className='vote-details'>{ optionOne.votes.length + ' of ' + totalVotes + ' votes'}</div>
                     </td>
                   </tr>
                   <tr>
@@ -46,7 +47,7 @@ class PollResults extends Component {
                             <div className='percent-text-label'>{ optionTwoPercent + '%' }</div>
                           </div>
                       }
-                      <div className='vote-details'>{ optionTwoVotes.length + ' of ' + totalVotes + ' votes'}</div>
+                      <div className='vote-details'>{ optionTwo.votes.length + ' of ' + totalVotes + ' votes'}</div>
                     </td>
                   </tr>
                 </tbody>
@@ -63,26 +64,9 @@ class PollResults extends Component {
 function mapStateToProps({ authedUser, questions }, props) {
   const { questionID } = props
   const question = questions[questionID]
-  const { optionOne, optionTwo } = question
-  const optionOneVotes = optionOne.votes
-  const optionTwoVotes = optionTwo.votes
-  const totalVotes = optionOneVotes.length + optionTwoVotes.length
-  const optionOnePercent = Math.round((optionOneVotes.length / totalVotes) * 100)
-  const optionTwoPercent = Math.round((optionTwoVotes.length / totalVotes) * 100)
-  const chosenOption = optionOneVotes.filter((user) => user === authedUser).length === 1
-    ? 'optionOne'
-    : 'optionTwo'
 
   return {
-    authedUser,
-    optionOne,
-    optionTwo,
-    optionOneVotes,
-    optionTwoVotes,
-    totalVotes,
-    optionOnePercent,
-    optionTwoPercent,
-    chosenOption
+    results: formatPollResults(question)
   }
 }
 
