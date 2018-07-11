@@ -44,7 +44,6 @@ class NewQuestion extends Component {
   render() {
     const { toHome } = this.state
     const { authedUser } = this.props
-    console.log(authedUser)
 
     if (authedUser === null) {
       return <Redirect to='/login' />

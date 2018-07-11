@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion, formatDate } from '../utils/helpers'
-import { handleVoteOnQuestion } from '../actions/shared'
 
 class DetailedPoll extends Component {
   render() {
     const { question, handleVote } = this.props
     const {
-      id, name, avatarURL, author, timestamp, optionOne, optionTwo
+      name, avatarURL, timestamp, optionOne, optionTwo
     } = question
 
     return(

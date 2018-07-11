@@ -8,7 +8,7 @@ class UndetailedPoll extends Component {
   render() {
     const { question, answer, answeredPoll } = this.props
     const {
-      id, name, avatarURL, author, timestamp, optionOne, optionTwo
+      id, name, avatarURL, timestamp, optionOne, optionTwo
     } = question
 
     return (

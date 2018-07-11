@@ -4,7 +4,7 @@ import { formatProfile } from '../utils/helpers'
 
 class LeaderProfile extends Component {
   render() {
-    const { uid, user } = this.props
+    const { user } = this.props
     const {
       avatarURL, name, questionsAnswered, questionsCreated, score
     } = user
@@ -53,7 +53,6 @@ function mapStateToProps({ authedUser, users }, { uid }) {
   const user = users[uid]
 
   return {
-    uid,
     authedUser,
     user: user
     ? formatProfile(user)

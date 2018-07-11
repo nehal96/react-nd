@@ -22,7 +22,7 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
 
-    // dispatch(showLoading())
+    dispatch(showLoading())
 
     return saveQuestion({
       optionOneText,
@@ -30,6 +30,6 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
       author: authedUser
     })
       .then((question) => dispatch(addQuestion(question)))
-      // .then(() => dispatch(hideLoading()))
+      .then(() => dispatch(hideLoading()))
   }
 }
