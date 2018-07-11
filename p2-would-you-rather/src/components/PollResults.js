@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { FaCheckSquare } from 'react-icons/lib/fa'
 
 class PollResults extends Component {
   render() {
     const {
       optionOne, optionTwo, optionOneVotes, optionTwoVotes, totalVotes,
-      optionOnePercent, optionTwoPercent
+      optionOnePercent, optionTwoPercent, chosenOption
     } = this.props
 
     return(
@@ -23,18 +24,28 @@ class PollResults extends Component {
                   <tr>
                     <td className='option-results'>{ optionOne.text }</td>
                     <td className='option-votes'>
-                      <div className='percent-bar' style={ {width: optionOnePercent + '%'} }>
-                        <div className='percent-text-label'>{ optionOnePercent + '%' }</div>
-                      </div>
+                      { chosenOption === 'optionOne'
+                        ? <div className='percent-bar option-voted' style={ {width: optionOnePercent + '%'} }>
+                            <div className='percent-text-label'>{ optionOnePercent + '%' }</div>
+                          </div>
+                        : <div className='percent-bar' style={ {width: optionOnePercent + '%'} }>
+                            <div className='percent-text-label'>{ optionOnePercent + '%' }</div>
+                          </div>
+                      }
                       <div className='vote-details'>{ optionOneVotes.length + ' of ' + totalVotes + ' votes'}</div>
                     </td>
                   </tr>
                   <tr>
                     <td className='option-results'>{ optionTwo.text }</td>
                     <td className='option-votes'>
-                      <div className='percent-bar' style={ {width: optionTwoPercent + '%'} }>
-                        <div className='percent-text-label'>{ optionTwoPercent + '%' }</div>
-                      </div>
+                      { chosenOption === 'optionTwo'
+                        ? <div className='percent-bar option-voted' style={ {width: optionTwoPercent + '%'} }>
+                            <div className='percent-text-label'>{ optionTwoPercent + '%' }</div>
+                          </div>
+                        : <div className='percent-bar' style={ {width: optionTwoPercent + '%'} }>
+                            <div className='percent-text-label'>{ optionTwoPercent + '%' }</div>
+                          </div>
+                      }
                       <div className='vote-details'>{ optionTwoVotes.length + ' of ' + totalVotes + ' votes'}</div>
                     </td>
                   </tr>
@@ -58,6 +69,9 @@ function mapStateToProps({ authedUser, questions }, props) {
   const totalVotes = optionOneVotes.length + optionTwoVotes.length
   const optionOnePercent = Math.round((optionOneVotes.length / totalVotes) * 100)
   const optionTwoPercent = Math.round((optionTwoVotes.length / totalVotes) * 100)
+  const chosenOption = optionOneVotes.filter((user) => user === authedUser).length === 1
+    ? 'optionOne'
+    : 'optionTwo'
 
   return {
     authedUser,
@@ -67,7 +81,8 @@ function mapStateToProps({ authedUser, questions }, props) {
     optionTwoVotes,
     totalVotes,
     optionOnePercent,
-    optionTwoPercent
+    optionTwoPercent,
+    chosenOption
   }
 }
 

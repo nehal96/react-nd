@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { FaCheckSquare } from 'react-icons/lib/fa'
 import { formatQuestion, formatDate } from '../utils/helpers'
 
 

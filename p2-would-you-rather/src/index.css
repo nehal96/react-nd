@@ -335,11 +335,6 @@ td {
   background-color: rgb(148, 196, 255, .9);
 }
 
-.option-voted {
-  border: 1px solid green;
-  background-color: lightgreen;
-}
-
 .option-not-voted {
   background-color: #ddd;
   opacity: 0.6;
@@ -407,6 +402,11 @@ td {
 .percent-text-label {
   font-size: 90%;
   padding-left: .4rem;
+}
+
+.option-voted {
+  border: 1px solid green;
+  background-color: lightgreen;
 }
 
 .vote-details {
