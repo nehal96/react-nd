@@ -25,7 +25,6 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
             <div className="App">
-              <Navbar/>
               { this.props.loading === true
                 ? null
                 : <div>
@@ -44,9 +43,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authedUser, questions }) {
   return {
-    loading: authedUser === null
+    // loading: authedUser === null
+    loading: Object.keys(questions).length === 0
   }
 }
 

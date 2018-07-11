@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import DetailedPoll from './DetailedPoll'
 import PollResults from './PollResults'
+import Navbar from './Navbar'
 import { handleVoteOnQuestion } from '../actions/shared'
 
 class Question extends Component {
@@ -33,13 +35,20 @@ class Question extends Component {
     const { authedUser, questionID } = this.props
     const { showResults } = this.state
 
+    if (authedUser === null) {
+      return <Redirect to='/login' />
+    }
+
     return(
-      <div>
-        { showResults === true
-          ? <PollResults questionID= { questionID }/>
-          : <DetailedPoll questionID={ questionID } handleVote={ this.handleVote } />
-        }
-      </div>
+      <Fragment>
+        <Navbar/>
+        <div>
+          { showResults === true
+            ? <PollResults questionID= { questionID }/>
+            : <DetailedPoll questionID={ questionID } handleVote={ this.handleVote } />
+          }
+        </div>
+      </Fragment>
     )
   }
 }

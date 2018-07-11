@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { handleAddQuestion } from '../actions/questions'
+import Navbar from './Navbar'
 
 class NewQuestion extends Component {
   state = {
@@ -42,42 +43,57 @@ class NewQuestion extends Component {
 
   render() {
     const { toHome } = this.state
+    const { authedUser } = this.props
+    console.log(authedUser)
+
+    if (authedUser === null) {
+      return <Redirect to='/login' />
+    }
 
     if (toHome === true) {
       return <Redirect to='/' />
     }
 
     return(
-      <div className='container'>
-        <div className='dashboard-container'>
-          <div className='panel'>
-            <div className='panel-header teal-panel'>
-              <h3 className='header-title'>Create a Question</h3>
-            </div>
-            <div className='panel-body'>
-              <h4 className='would-you-rather'>Would You Rather...</h4>
-              <form className='login-form' onSubmit={ this.handleSubmit }>
-                <input
-                  id='option-1-input'
-                  className='question-input'
-                  type='text'
-                  placeholder='Option 1'
-                  onChange={ this.handleChange }/>
-                <div className='create-question-sep'>OR</div>
-                <input
-                  id='option-2-input'
-                  className='question-input'
-                  type='text'
-                  placeholder='Option 2'
-                  onChange={ this.handleChange }/>
-                <button className='btn new-question-btn' type='submit'>Submit</button>
-              </form>
+      <Fragment>
+        <Navbar />
+          <div className='container'>
+            <div className='dashboard-container'>
+              <div className='panel'>
+                <div className='panel-header teal-panel'>
+                  <h3 className='header-title'>Create a Question</h3>
+                </div>
+                <div className='panel-body'>
+                  <h4 className='would-you-rather'>Would You Rather...</h4>
+                  <form className='login-form' onSubmit={ this.handleSubmit }>
+                    <input
+                      id='option-1-input'
+                      className='question-input'
+                      type='text'
+                      placeholder='Option 1'
+                      onChange={ this.handleChange }/>
+                    <div className='create-question-sep'>OR</div>
+                    <input
+                      id='option-2-input'
+                      className='question-input'
+                      type='text'
+                      placeholder='Option 2'
+                      onChange={ this.handleChange }/>
+                    <button className='btn new-question-btn' type='submit'>Submit</button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+      </Fragment>
     )
   }
 }
 
-export default connect()(NewQuestion)
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(NewQuestion)

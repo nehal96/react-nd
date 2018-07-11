@@ -25,6 +25,7 @@ class Navbar extends Component {
           </ul>
         </div>
         <div className='login-logout'>
+          <div className='welcome-message'>Welcome, User</div>
           <button className='btn logout-btn'>Logout</button>
         </div>
       </nav>

@@ -53,7 +53,8 @@ td {
   width: 90%;
   margin: .5rem auto;
   text-decoration: none;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .nav ul {
@@ -70,11 +71,20 @@ td {
 }
 
 .login-logout {
-  margin: 1em 0em;
+  margin: .4em 0em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.welcome-message {
+  color: #444;
+  padding: 0rem 1rem;
 }
 
 .logout-btn {
   justify-content: flex-start;
+  margin: 0rem 1rem;
   background-color: lightblue;
   box-shadow: 0 10px 40px -10px rgba(0,64,128,.4);
 }
@@ -82,6 +92,12 @@ td {
 .logout-btn:hover {
   box-shadow: none;
   transition-duration: .2s;
+}
+
+@media only screen and (max-width: 700px) {
+  .welcome-message {
+    display: none;
+  }
 }
 
 /* .nav li:first-child {

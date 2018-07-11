@@ -5,7 +5,8 @@ import { setAuthedUser } from './authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 // Use constant until I figure out how to connect login
-const INIT_ID = 'tylermcginnis'
+// const INIT_ID = 'tylermcginnis'
+const INIT_ID = null
 
 export const VOTE_ON_QUESTION = 'VOTE_ON_QUESTION'
 
