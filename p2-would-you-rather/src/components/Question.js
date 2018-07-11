@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import DetailedPoll from './DetailedPoll'
 import PollResults from './PollResults'
 import Navbar from './Navbar'
+import ErrorPage from './ErrorPage'
 import { handleVoteOnQuestion } from '../actions/shared'
 
 class Question extends Component {
@@ -32,8 +33,12 @@ class Question extends Component {
   }
 
   render() {
-    const { authedUser, questionID } = this.props
+    const { authedUser, questionID, answeredPoll } = this.props
     const { showResults } = this.state
+
+    if (answeredPoll === null) {
+      return <ErrorPage />
+    }
 
     if (authedUser === null) {
       return <Redirect to='/login' />
@@ -55,13 +60,23 @@ class Question extends Component {
 
 function mapStateToProps({ authedUser, questions }, props) {
   const { id } = props.match.params
-  const { answeredPoll } = props.location.state
 
-  return {
-    authedUser,
-    answeredPoll,
-    questions,
-    questionID: id
+  if (Object.keys(questions).includes(id)) {
+    const { answeredPoll } = props.location.state
+
+    return {
+      authedUser,
+      answeredPoll,
+      questions,
+      questionID: id
+    }
+  } else {
+    return {
+      authedUser,
+      answeredPoll: null,
+      questions: null,
+      questionID: null
+    }
   }
 }
 
