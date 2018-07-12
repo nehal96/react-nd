@@ -2,6 +2,7 @@
   "name": "p2-would-you-rather",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nehal96.github.io/react-nd/projects/would-you-rather",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
