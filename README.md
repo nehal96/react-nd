@@ -2,6 +2,11 @@
 
 Projects, coursework, and resources from Udacity's React Nanodegree
 
+## Projects
+
+1. [Listopia - Book Tracking App](https://nehal96.github.io/book-tracking-app/) - React
+2. [Would You Rather App](https://nehal96.github.io/would-you-rather-app/) - React and Redux
+
 
 ## Resources
 
