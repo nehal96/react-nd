@@ -4,8 +4,8 @@ Projects, coursework, and resources from Udacity's React Nanodegree
 
 ## Projects
 
-1. [Listopia - Book Tracking App](https://nehal96.github.io/book-tracking-app/) - React
-2. [Would You Rather App](https://nehal96.github.io/would-you-rather-app/) - React and Redux
+#### [Listopia: Book Tracking App](https://nehal96.github.io/book-tracking-app/) - React
+#### [Would You Rather App](https://nehal96.github.io/would-you-rather-app/) - React and Redux
 
 
 ## Resources
@@ -108,3 +108,11 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 * [Normalizing State Shape](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape)
 * [Redux for State Management in Large Web Apps](https://blog.mapbox.com/redux-for-state-management-in-large-web-apps-c7f3fab3ce9b) - Mapbox blog
 * [Five Tips for Working with Redux in Large Applications](https://techblog.appnexus.com/five-tips-for-working-with-redux-in-large-applications-89452af4fdcb) - AppNexus Engineering blog
+
+
+### 3. React Native
+
+#### Intro
+* [Bridging in React Native](https://tadeuzagallo.com/blog/react-native-bridge/) - blog post, Tadeu Zagallo
+* [12 Common Questions from Working with React Native](https://medium.com/dailyjs/12-common-questions-about-react-native-74fc9ba49b17) - Medium post, Jon Lebensold
+* [Getting Started/Building Projects with Native Code](https://facebook.github.io/react-native/docs/getting-started.html) - React Native Docs
