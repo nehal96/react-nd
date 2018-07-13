@@ -21,7 +21,7 @@ class App extends Component {
     // const questionID = "8xf0y6ziyjabvozdd253nd"
 
     return (
-      <Router basename="/react-nd">
+      <Router>
         <Fragment>
           <LoadingBar />
             <div className="App">
