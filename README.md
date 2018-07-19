@@ -116,3 +116,7 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 * [Bridging in React Native](https://tadeuzagallo.com/blog/react-native-bridge/) - blog post, Tadeu Zagallo
 * [12 Common Questions from Working with React Native](https://medium.com/dailyjs/12-common-questions-about-react-native-74fc9ba49b17) - Medium post, Jon Lebensold
 * [Getting Started/Building Projects with Native Code](https://facebook.github.io/react-native/docs/getting-started.html) - React Native Docs
+
+#### Styling
+* [How Can I Use CSS in JS Securely?](https://reactarmory.com/answers/how-can-i-use-css-in-js-securely) - React Armory, James K Nelson
+* [Flexbox Froggy](http://flexboxfroggy.com/) - game, Codepip
