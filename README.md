@@ -120,3 +120,7 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 #### Styling
 * [How Can I Use CSS in JS Securely?](https://reactarmory.com/answers/how-can-i-use-css-in-js-securely) - React Armory, James K Nelson
 * [Flexbox Froggy](http://flexboxfroggy.com/) - game, Codepip
+* [Understanding React Native Flexbox Layout](https://medium.com/the-react-native-log/understanding-react-native-flexbox-layout-7a528200afd4) - Medium post, Daniel Skripnik
+* [Platform Specific Code](https://facebook.github.io/react-native/docs/platform-specific-code.html) - React Native Docs
+* [Glamorous](https://github.com/robinpowered/glamorous-native) - React Native styling library
+* [Styled Components](https://github.com/styled-components/styled-components) - React Native styling library
