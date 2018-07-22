@@ -124,3 +124,6 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 * [Platform Specific Code](https://facebook.github.io/react-native/docs/platform-specific-code.html) - React Native Docs
 * [Glamorous](https://github.com/robinpowered/glamorous-native) - React Native styling library
 * [Styled Components](https://github.com/styled-components/styled-components) - React Native styling library
+
+#### Navigation
+* [Stack Navigation in React Native](https://medium.com/@swathylenjini/stack-navigation-in-react-native-2cd00374ff3a) - Medium post, Swathy L
