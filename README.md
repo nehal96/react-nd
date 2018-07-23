@@ -127,3 +127,6 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 
 #### Navigation
 * [Stack Navigation in React Native](https://medium.com/@swathylenjini/stack-navigation-in-react-native-2cd00374ff3a) - Medium post, Swathy L
+
+#### Native Features
+* [Location API](https://docs.expo.io/versions/latest/sdk/location.html)
