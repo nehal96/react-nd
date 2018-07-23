@@ -133,3 +133,8 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 * [Animation Library](https://facebook.github.io/react-native/docs/animated.html) - React Native Docs
 * [Notifications API](https://docs.expo.io/versions/latest/sdk/notifications.html) - Expo Docs
 * [ImagePicker API](https://docs.expo.io/versions/latest/sdk/imagepicker.html) - Expo Docs
+
+#### Uploading App Builds
+* [Building Standalone Apps](https://docs.expo.io/versions/latest/guides/building-standalone-apps.html) - Expo Docs
+* [iOS](https://developer.apple.com/support/app-store-connect/) - Apple Developer Support
+* [Android](https://support.google.com/googleplay/android-developer/answer/113469?hl=en) - Google Developer Support
