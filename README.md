@@ -131,3 +131,5 @@ A better [compilation of React and Redux links](https://github.com/markerikson/r
 #### Native Features
 * [Location API](https://docs.expo.io/versions/latest/sdk/location.html) - Expo Docs
 * [Animation Library](https://facebook.github.io/react-native/docs/animated.html) - React Native Docs
+* [Notifications API](https://docs.expo.io/versions/latest/sdk/notifications.html) - Expo Docs
+* [ImagePicker API](https://docs.expo.io/versions/latest/sdk/imagepicker.html) - Expo Docs
