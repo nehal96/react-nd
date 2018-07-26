@@ -1,18 +1,10 @@
 # Project 1: A Book Tracking App
 
+The project is maintained over at the [book-tracking-app repo](https://github.com/nehal96/book-tracking-app). It's also kept here because it's part of the React Nanodegree.
+
 ### Project Overview
 
 Listopia is a simple book-tracking application that allows you to add and move your books across three shelves: **Currently Reading**, **Want to Read**, and **Read**. The project is built using React, and is meant to be a way of implementing React Fundamentals, including Components, props, state management, JSX notation, and routing, among others.
-
-### How to Run
-
-1. Clone or download the project from the top-right dropdown menu. (To clone use `git clone https://github.com/nehal96/react-nd.git`)
-
-2. Enter the `p1-my-reads` directory.
-
-3. Run `npm install` to install all project dependencies
-
-4. Run `npm start` to start the dev server.
 
 ### Misc
 

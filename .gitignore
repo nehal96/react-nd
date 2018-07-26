@@ -3,3 +3,7 @@
 
 # resources folder
 /resources
+
+# p3 stuff
+/p3-mobile-flashcards/.expo
+/p3-mobile-flashcards/node_modules
